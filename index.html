@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TicTacToast</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="shell">
+      <section class="scoreboard" aria-label="Scoreboard">
+        <div class="brand">
+          <img src="assets/toast-x.svg" alt="" class="brand-mark">
+          <div>
+            <h1>TicTacToast</h1>
+            <p id="roundLabel">Round 1</p>
+          </div>
+        </div>
+        <div class="scores">
+          <div class="score active" data-score-card="X">
+            <span>Toast</span>
+            <strong id="scoreX">0</strong>
+          </div>
+          <div class="score">
+            <span>Draws</span>
+            <strong id="scoreDraw">0</strong>
+          </div>
+          <div class="score" data-score-card="O">
+            <span>Jam</span>
+            <strong id="scoreO">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-area">
+        <aside class="panel controls" aria-label="Game controls">
+          <div class="field">
+            <label for="mode">Mode</label>
+            <select id="mode">
+              <option value="cpu">Toast vs CPU</option>
+              <option value="local">Two players</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="difficulty">CPU</label>
+            <select id="difficulty">
+              <option value="smart">Smart</option>
+              <option value="spicy">Spicy</option>
+              <option value="random">Random</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="firstPlayer">First</label>
+            <select id="firstPlayer">
+              <option value="X">Toast</option>
+              <option value="O">Jam</option>
+            </select>
+          </div>
+          <div class="toggles">
+            <label><input type="checkbox" id="soundToggle" checked> Sound</label>
+            <label><input type="checkbox" id="assistToggle" checked> Hints</label>
+          </div>
+          <div class="actions">
+            <button id="newRoundBtn" type="button">New Round</button>
+            <button id="resetBtn" type="button">Reset Scores</button>
+            <button id="exportBtn" type="button">Export CSV</button>
+          </div>
+        </aside>
+
+        <section class="board-wrap" aria-label="Tic tac toe board">
+          <div class="status-row">
+            <p id="status">Toast starts. Pick a square.</p>
+            <p id="timer">00:00</p>
+          </div>
+          <div id="board" class="board" role="grid" aria-label="Game board"></div>
+        </section>
+
+        <aside class="panel history" aria-label="Match history">
+          <div class="history-head">
+            <h2>Match Log</h2>
+            <span id="streak">No streak yet</span>
+          </div>
+          <ol id="moveList" class="move-list"></ol>
+          <div id="matchList" class="match-list"></div>
+        </aside>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
