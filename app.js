@@ -272,8 +272,31 @@ function suggestedMove() {
 }
 
 function pieceMarkup(player) {
-  const src = player === "X" ? "assets/toast-x.svg" : "assets/jam-o.svg";
-  return `<img src="${src}" alt="${nameFor(player)}" class="piece">`;
+  return player === "X" ? toastPieceMarkup() : jamPieceMarkup();
+}
+
+function toastPieceMarkup() {
+  return `
+    <svg class="piece" viewBox="0 0 160 160" role="img" aria-label="Toast">
+      <path fill="#8c4b1f" d="M25 68C25 32 51 16 80 16s55 16 55 52v55c0 14-11 25-25 25H50c-14 0-25-11-25-25V68Z"/>
+      <path fill="#f2a65a" d="M36 70c0-28 19-42 44-42s44 14 44 42v50c0 9-7 16-16 16H52c-9 0-16-7-16-16V70Z"/>
+      <path fill="#fff1be" d="M49 76c0-21 13-31 31-31s31 10 31 31v37c0 6-5 11-11 11H60c-6 0-11-5-11-11V76Z"/>
+      <path fill="#c72c48" d="M55 60c8-9 21-9 28-1 8-5 19-2 23 7 4 10-2 23-17 35-4 3-9 3-13 0C61 90 51 74 55 60Z" opacity=".18"/>
+      <path stroke="#241c18" stroke-linecap="round" stroke-width="15" d="m57 62 46 50M104 62l-47 50"/>
+    </svg>
+  `;
+}
+
+function jamPieceMarkup() {
+  return `
+    <svg class="piece" viewBox="0 0 160 160" role="img" aria-label="Jam">
+      <path fill="#5d1d30" d="M30 59c0-27 22-49 50-49s50 22 50 49v54c0 21-17 38-38 38H68c-21 0-38-17-38-38V59Z"/>
+      <path fill="#c72c48" d="M43 60c0-20 16-36 37-36s37 16 37 36v51c0 14-11 25-25 25H68c-14 0-25-11-25-25V60Z"/>
+      <path fill="#f8c5ce" d="M57 76c0-13 10-23 23-23s23 10 23 23-10 23-23 23-23-10-23-23Z"/>
+      <path fill="#fff8ed" d="M69 76c0-6 5-11 11-11s11 5 11 11-5 11-11 11-11-5-11-11Z"/>
+      <path fill="#ffdf75" d="M54 37c6-8 16-13 26-13 12 0 22 5 29 14-18-3-37-3-55-1Z"/>
+    </svg>
+  `;
 }
 
 function getEmptySquares(testBoard) {
