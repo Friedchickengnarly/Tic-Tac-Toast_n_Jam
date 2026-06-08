@@ -1,0 +1,10 @@
+{
+  "name": "tictactoast",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A playful TicTacToast browser game for GitHub Pages.",
+  "scripts": {
+    "start": "npx serve .",
+    "build": "echo Static site: no build step required"
+  }
+}
