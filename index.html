@@ -45,6 +45,7 @@
             <select id="mode">
               <option value="cpu">Toast vs CPU</option>
               <option value="local">Two players</option>
+              <option value="remote">Remote friend</option>
             </select>
           </div>
           <div class="field">
@@ -65,6 +66,19 @@
           <div class="toggles">
             <label><input type="checkbox" id="soundToggle" checked> Sound</label>
             <label><input type="checkbox" id="assistToggle" checked> Hints</label>
+          </div>
+          <div class="remote-controls" aria-label="Remote play controls">
+            <label for="roomCode">Remote room</label>
+            <div class="room-line">
+              <input id="roomCode" type="text" inputmode="text" autocomplete="off" placeholder="ROOM">
+              <button id="joinRemoteBtn" type="button">Join</button>
+            </div>
+            <div class="remote-actions">
+              <button id="createRemoteBtn" type="button">Create Remote Game</button>
+              <button id="copyInviteBtn" type="button" disabled>Copy Invite</button>
+              <button id="leaveRemoteBtn" type="button" disabled>Leave Remote</button>
+            </div>
+            <p id="remoteStatus" class="remote-status">Add Firebase config to enable remote play.</p>
           </div>
           <div class="actions">
             <button id="newRoundBtn" type="button">New Round</button>
@@ -92,6 +106,7 @@
       </section>
     </main>
 
+    <script src="firebase-config.js"></script>
     <script src="app.js"></script>
   </body>
 </html>

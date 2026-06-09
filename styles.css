@@ -137,7 +137,8 @@ h1 {
   font-weight: 800;
 }
 
-select {
+select,
+input[type="text"] {
   width: 100%;
   border: 2px solid var(--line);
   border-radius: 8px;
@@ -149,6 +150,41 @@ select {
   display: grid;
   gap: 8px;
   margin: 16px 0;
+}
+
+.remote-controls {
+  display: grid;
+  gap: 8px;
+  border-top: 2px solid rgba(59, 42, 34, .22);
+  border-bottom: 2px solid rgba(59, 42, 34, .22);
+  margin: 14px 0;
+  padding: 14px 0;
+}
+
+.remote-controls > label {
+  font-weight: 900;
+}
+
+.room-line {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 74px;
+  gap: 8px;
+}
+
+.remote-actions {
+  display: grid;
+  gap: 8px;
+}
+
+.remote-status {
+  border: 2px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--toast-dark);
+  font-size: .86rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 8px;
 }
 
 .actions {
